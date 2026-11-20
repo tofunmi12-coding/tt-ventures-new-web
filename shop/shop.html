@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Shop men's clothing, sneakers, bags, accessories and designer sleepers at TT Ventures.">
+
+    <title>Shop All | TT Ventures</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Website stylesheet and JavaScript -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium-theme.css">
+    <script src="script.js" defer></script>
+    <script src="auth-guard.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+
+<body>
+
+    <!-- Announcement bar -->
+    <div class="announcement">
+        YOUR STYLE, YOUR STATEMENT
+        <span>&bull;</span>
+        DISCOVER THE LATEST COLLECTION
+    </div>
+
+    <!-- Navigation header -->
+    <header class="header">
+
+        <a class="logo" href="index.html">
+            TT<span>VENTURES</span>
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+            &#9776;
+        </button>
+
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a class="active" href="shop.html">Shop All</a>
+            <a href="shop.html?category=Men%27s%20Clothing">Clothing</a>
+            <a href="shop.html?category=Shoes%20%26%20Sneakers">Shoes</a>
+            <a href="shop.html?category=Bags%20%26%20Accessories">Accessories</a>
+            <a href="shop.html?category=Designer%20Sleepers">Sleepers</a>
+            <a href="account.html">My Account</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="search-link" href="#collection" aria-label="Search products">&#128269;</a>
+
+            <button class="cart-open" type="button" data-open-cart aria-label="Open shopping cart">
+                Cart  <span data-cart-count>0</span>
+            </button>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- Shop introduction -->
+        <section class="section shop-intro" id="collection">
+
+            <p class="eyebrow">THE TT VENTURES COLLECTION</p>
+
+            <h1>Find your <em>everyday style.</em></h1>
+
+            <p>
+                Explore clothing, sneakers, accessories and designer
+                sleepers selected for your everyday wardrobe.
+            </p>
+
+        </section>
+
+        <!-- Product catalogue -->
+        <section class="section shop-section">
+
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">EXPLORE THE COLLECTION</p>
+                    <h2>Shop all products</h2>
+                    <p id="result-count">10 pieces</p>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="shop-toolbar">
+
+                <div class="shop-search">
+                    <label for="product-search">Search products</label>
+                    <input type="search" id="product-search" placeholder="Search clothing, shoes, bags..."
+                        autocomplete="off">
+                </div>
+
+                <!-- Sort products -->
+                <div class="shop-sort">
+                    <label for="sort-products">Sort by</label>
+                    <select id="sort-products">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                        <option value="name">Name: A to Z</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- Category filters -->
+            <div class="category-filters" aria-label="Filter products by category">
+
+                <button type="button" class="active" data-category="All">
+                    All products
+                </button>
+
+                <button type="button" data-category="Men's Clothing">
+                    Men's clothing
+                </button>
+
+                <button type="button" data-category="Shoes &amp; Sneakers">
+                    Shoes &amp; sneakers
+                </button>
+
+                <button type="button" data-category="Bags &amp; Accessories">
+                    Bags &amp; accessories
+                </button>
+
+                <button type="button" data-category="Designer Sleepers">
+                    Designer sleepers
+                </button>
+
+                <button type="button" id="reset-filters">
+                    Reset filters
+                </button>
+
+            </div>
+
+            <!-- JavaScript inserts product cards here -->
+            <div class="products-grid" id="products-grid"></div>
+
+            <!-- Shown when search or filters return no products -->
+            <p id="no-results" hidden>
+                No products found. Try another search or category.
+            </p>
+
+            <p class="demo-note">
+                Sample products and prices are shown for demonstration.
+            </p>
+
+        </section>
+
+        <!-- Shopping reassurance -->
+        <section class="section values">
+
+            <div>
+                <b>01</b>
+                <h3>Curated style</h3>
+                <p>Everyday pieces with a considered look.</p>
+            </div>
+
+            <div>
+                <b>02</b>
+                <h3>Made for your routine</h3>
+                <p>Options for laid-back days and going-out plans.</p>
+            </div>
+
+            <div>
+                <b>03</b>
+                <h3>Your look, your way</h3>
+                <p>Build a wardrobe that feels like you.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="policies">
+
+        <div class="footer-grid">
+
+            <div>
+                <a class="logo" href="index.html">
+                    TT<span>VENTURES</span>
+                </a>
+                <p>Everyday style. Your own statement.</p>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <a href="shop.html">Shop all</a>
+                <a href="shop.html?category=Men%27s%20Clothing">Men's clothing</a>
+                <a href="shop.html?category=Shoes%20%26%20Sneakers">Shoes &amp; sneakers</a>
+                <a href="shop.html?category=Designer%20Sleepers">Designer sleepers</a>
+            </div>
+
+            <div>
+                <h4>Customer care</h4>
+                <a href="contact.html">Contact us</a>
+                <a href="delivery.html">Delivery information</a>
+                <a href="returns.html">Returns &amp; exchanges</a>
+            </div>
+
+            <div>
+                <h4>Stay in the loop</h4>
+                <p>New arrivals and style updates.</p>
+
+                <form id="newsletter-form">
+                    <input id="newsletter-email" type="email" placeholder="Your email address"
+                        aria-label="Your email address" required>
+
+                    <button type="submit" aria-label="Subscribe">
+                        &rarr;
+                    </button>
+                </form>
+
+                <small id="newsletter-message"></small>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; <span id="year"></span> TT Ventures</span>
+            <span>Designed for your everyday.</span>
+            <span>Demo store â€” payment setup required before launch.</span>
+        </div>
+
+    </footer>
+
+    <!-- Cart backdrop -->
+    <div class="backdrop" data-close-cart></div>
+
+    <!-- Sliding shopping cart -->
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+
+        <div class="cart-head">
+
+            <div>
+                <p class="eyebrow">YOUR SELECTION</p>
+                <h2>Your bag <small data-cart-count>(0)</small></h2>
+            </div>
+
+            <button class="close-cart" type="button" data-close-cart aria-label="Close cart">
+                &times;
+            </button>
+
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="cart-foot">
+
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">&#8358;0</strong>
+            </div>
+
+            <p>Delivery fees are calculated separately.</p>
+
+            <button id="checkout-button" class="button dark full" type="button">
+                Proceed to checkout &rarr;
+            </button>
+
+            <small>
+                Secure checkout with card, bank transfer, or USSD.
+            </small>
+
+        </div>
+
+    </aside>
+
+    <!-- Checkout form: keep this section only once on this page -->
+    <div class="checkout-overlay" id="checkout-overlay" aria-hidden="true">
+
+        <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+
+            <button type="button" class="checkout-close" id="checkout-close" aria-label="Close checkout">
+                &times;
+            </button>
+
+            <p class="eyebrow">ALMOST YOURS</p>
+
+            <h2 id="checkout-title">Complete your order</h2>
+
+            <p>Enter your details so we can arrange delivery.</p>
+
+            <form id="checkout-form">
+
+                <label for="checkout-name">Full name</label>
+                <input id="checkout-name" name="name" type="text" autocomplete="name" required>
+
+                <label for="checkout-email">Email address</label>
+                <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+
+                <label for="checkout-phone">Phone number</label>
+                <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" required>
+
+                <label for="checkout-address">Delivery address</label>
+                <textarea id="checkout-address" name="address" autocomplete="street-address" rows="3"
+                    required></textarea>
+
+
+                <!-- Standard online payment -->
+                <fieldset class="payment-methods">
+                    <legend>Payment method</legend>
+                    <p>Pay securely online by card, bank transfer, or USSD.</p>
+                    <label>
+                        <input type="radio" name="paymentMethod" value="paystack" required checked>
+                        Standard online payment
+                    </label>
+                </fieldset>
+
+                <div class="checkout-total">
+                    <span>Order total</span>
+                    <strong id="checkout-total">&#8358;0</strong>
+                </div>
+
+                <button type="submit" id="place-order-button" class="button dark full">
+                    Place Order
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="auth-modal.js" defer></script>
+</body>
+
+</html>
+

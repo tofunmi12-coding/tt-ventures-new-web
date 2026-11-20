@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="account-page.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in or create your TT Ventures customer account.">
+    <title>My Account | TT Ventures</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium-theme.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+</head>
+
+<body class="account-page">
+
+    <div class="announcement">
+        TT VENTURES <span>&bull;</span> YOUR PERSONAL SHOPPING SPACE
+    </div>
+
+    <header class="header account-header">
+
+        <div class="account-bar">
+            <button class="account-btn" aria-expanded="false" aria-haspopup="true">
+                <span class="account-icon">&#128100;</span>
+                <span class="account-text">Account</span>
+                <span class="account-arrow">^</span>
+            </button>
+            <button class="account-help" aria-label="Help">
+                &#x2753;
+            </button>
+        </div>
+    </header>
+
+    <main class="account-layout">
+
+        <section class="account-story">
+            <p class="eyebrow">WELCOME TO TT VENTURES</p>
+
+            <h1>Good style.<br><em>Great to have you.</em></h1>
+
+            <p class="account-story-text">
+                Your place to discover considered essentials, explore
+                the collection and keep your shopping experience simple.
+            </p>
+
+            <div class="account-story-note">
+                <span class="account-story-line"></span>
+                <p>Style that speaks for you.</p>
+            </div>
+
+            <div class="account-story-decoration" aria-hidden="true">
+                <span>TT</span>
+            </div>
+        </section>
+
+        <section class="account-panel">
+
+            <div class="account-panel-heading">
+                <p class="eyebrow">YOUR ACCOUNT</p>
+                <h2 id="account-heading">Welcome back.</h2>
+                <p id="account-subheading">
+                    Sign in to continue your journey with us.
+                </p>
+            </div>
+
+            <div id="account-message" class="account-message" role="status" aria-live="polite"></div>
+
+            <!-- Orange Sign In button (shown when not signed in) -->
+            <button id="signin-button" class="account-signin" type="button" hidden>
+                Sign In
+            </button>
+
+            <!-- Account navigation: My Account, Orders, Wishlist -->
+            <nav class="account-nav" aria-label="Account sections">
+                <a href="#my-account" class="account-nav-item active" data-section="my-account">My Account</a>
+                <a href="#my-orders" class="account-nav-item" data-section="my-orders">Orders</a>
+                <a href="#my-wishlist" class="account-nav-item" data-section="my-wishlist">Wishlist</a>
+            </nav>
+
+            <!-- My Account / Profile section -->
+            <section id="section-my-account" class="account-section active" aria-labelledby="my-account-heading">
+                <h2 id="my-account-heading">My Account</h2>
+                <p id="profile-message" role="status"></p>
+
+
+
+                <button id="logout-button" class="account-submit" type="button">
+                    Sign out
+                </button>
+
+                <a class="account-secondary-link" href="shop.html">
+                    Continue shopping &rarr;
+                </a>
+            </section>
+
+            <!-- Orders section -->
+            <section id="section-my-orders" class="account-section hidden" aria-labelledby="my-orders-heading">
+                <h2 id="my-orders-heading">Orders</h2>
+                <!-- Customer order history -->
+                <section class="order-history" aria-labelledby="order-history-title">
+                    <h2 id="order-history-title">My Orders</h2>
+                    <p class="order-history-intro">
+                        View your recent orders and their current status.
+                    </p>
+
+                    <div id="order-history-message" role="status" aria-live="polite">
+                        Loading your orders...
+                    </div>
+
+                    <div id="order-history-list"></div>
+                </section>
+            </section>
+
+            <!-- Wishlist section -->
+            <section id="section-my-wishlist" class="account-section hidden" aria-labelledby="my-wishlist-heading">
+                <h2 id="my-wishlist-heading">Wishlist</h2>
+                <div id="wishlist-message" role="status"></div>
+                <div id="wishlist-list">
+                    <p class="wishlist-empty">Your wishlist is empty.</p>
+                    <p class="wishlist-hint">Sign in to save your favorite items.</p>
+                </div>
+            </section>
+
+
+            <div id="account-forms">
+
+                <div class="account-tabs" role="tablist" aria-label="Account options">
+                    <button type="button" id="show-login" class="account-tab active" role="tab" aria-selected="true"
+                        aria-controls="login-form">
+                        Sign in
+                    </button>
+
+                    <button type="button" id="show-register" class="account-tab" role="tab" aria-selected="false"
+                        aria-controls="register-form">
+                        Create account
+                    </button>
+                </div>
+
+                <form id="login-form" class="account-form">
+                    <label for="login-email">Email address</label>
+                    <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"
+                        required>
+
+                    <label for="login-password">Password</label>
+                    <input id="login-password" name="password" type="password" autocomplete="current-password"
+                        placeholder="Enter your password" required>
+
+                    <button type="submit" class="account-submit">
+                        Sign in <span>&rarr;</span>
+                    </button>
+
+                    <p class="account-form-footnote">
+                        Welcome back. Your next favourite find awaits.
+                    </p>
+                </form>
+
+                <form id="register-form" class="account-form" hidden>
+                    <label for="register-name">Full name</label>
+                    <input id="register-name" name="name" type="text" autocomplete="name" placeholder="Your full name"
+                        required>
+
+                    <label for="register-email">Email address</label>
+                    <input id="register-email" name="email" type="email" autocomplete="email"
+                        placeholder="you@example.com" required>
+
+                    <label for="register-password">Create password</label>
+                    <input id="register-password" name="password" type="password" autocomplete="new-password"
+                        placeholder="Create a password" required>
+
+                    <button type="submit" class="account-submit">
+                        Create my account <span>&rarr;</span>
+                    </button>
+
+                    <p class="account-form-footnote">
+                        Create an account to get started with TT Ventures.
+                    </p>
+                </form>
+
+            </div>
+
+            <div class="account-panel-footer">
+                <span>TT VENTURES</span>
+                <span>THOUGHTFUL STYLE. EVERY DAY.</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer account-footer">
+        <div class="footer-bottom">
+            <span>&copy; <span id="year"></span> TT Ventures</span>
+            <a href="contact.html">Need help? Contact us</a>
+        </div>
+    </footer>
+
+    <script src="account.js"></script>
+    <script src="site.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Order Admin | TT Ventures</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="TT Ventures home">TT Ventures</a>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="button button-outline" href="shop.html">View Store</a>
+  </header>
+  <main class="content-page">
+    <p class="eyebrow">Store management</p>
+    <h1>Order dashboard</h1>
+    <p class="intro">Sign in with your admin credentials to view orders and update their status.</p>
+
+    <section class="admin-card" aria-labelledby="admin-login-title">
+      <h2 id="admin-login-title">Admin sign in</h2>
+      <form id="admin-login-form">
+        <label for="admin-username">Username</label>
+        <input id="admin-username" name="username" autocomplete="username" required>
+        <label for="admin-password">Password</label>
+        <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="button" type="submit" id="admin-login-button">Load orders</button>
+      </form>
+      <p id="admin-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="orders-section" hidden aria-labelledby="orders-title">
+      <div class="section-title">
+        <h2 id="orders-title">Recent orders</h2>
+        <button class="button button-outline" type="button" id="refresh-orders">Refresh</button>
+      </div>
+      <div id="orders-list" class="admin-orders" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-bottom"><p>© <span id="year"></span> TT Ventures</p><p>Private admin area</p></div>
+  </footer>
+</body>
+</html>

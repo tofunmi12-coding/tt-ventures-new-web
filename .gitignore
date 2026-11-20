@@ -1,0 +1,18 @@
+
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+env/.env*
+orders.json
+users.json
+npm-debug.log*
+.DS_Store
+
+# Local backups and generated snapshots
+**/*.bak
+**/*.before-*
+**/*backup*
+**/Screenshot *.png
+.tt-ventures-store-work/

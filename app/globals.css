@@ -1,0 +1,238 @@
+@import "./legacy-style.css";
+@import "./legacy-premium-theme.css";
+
+.legacy-page-content {
+  display: contents;
+}
+
+/* Keep the existing storefront design usable at phone widths. */
+@media (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+  }
+
+  .header > .announcement {
+    order: -1;
+    flex: 0 0 calc(100% + 28px);
+    width: calc(100% + 28px);
+    margin: -12px -14px 2px;
+    padding: 8px 10px;
+    font-size: clamp(8px, 2.5vw, 10px);
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  .header .logo {
+    order: 0;
+    min-width: 0;
+    font-size: clamp(15px, 4.4vw, 19px);
+    white-space: nowrap;
+  }
+
+  .header .menu-toggle {
+    order: 1;
+    display: inline-flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .header .header-actions {
+    order: 2;
+    min-width: 0;
+    gap: 6px;
+    margin-left: auto;
+  }
+
+  .header .header-actions .search-link {
+    display: inline-flex;
+    min-width: 38px;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header .cart-open {
+    min-height: 42px;
+    padding: 7px 9px;
+    white-space: nowrap;
+  }
+
+  .header #main-nav {
+    order: 3;
+    display: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 4px 0 0;
+  }
+
+  .header #main-nav.open {
+    display: flex;
+  }
+
+  .header #main-nav a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 11px 8px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    margin: 12px;
+    padding: 24px 18px;
+  }
+
+  .hero-copy {
+    min-width: 0;
+    padding: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+    line-height: 1.06;
+    overflow-wrap: break-word;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: clamp(190px, 65vw, 320px);
+    max-height: none;
+  }
+
+  .section,
+  .shop-intro {
+    min-width: 0;
+    padding-inline: 14px;
+  }
+
+  .shop-toolbar,
+  .shop-controls,
+  .product-filters {
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .shop-toolbar input,
+  .shop-toolbar select,
+  .shop-controls input,
+  .shop-controls select,
+  .product-filters input,
+  .product-filters select,
+  #product-search {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .products-grid,
+  .product-grid,
+  #products-grid,
+  .category-grid,
+  .categories-grid,
+  .category-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-width: 0;
+    gap: 12px 9px;
+  }
+
+  .product-card,
+  .category-card {
+    min-width: 0;
+  }
+
+  .product-card .product-image img,
+  .category-card img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .product-card h3,
+  .product-card .product-title,
+  .product-card button {
+    overflow-wrap: anywhere;
+  }
+
+  .footer-main,
+  .footer-grid,
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-main > :first-child,
+  .footer-grid > :first-child,
+  .footer-top > :first-child {
+    grid-column: auto;
+  }
+
+  .checkout-modal,
+  .checkout-panel,
+  #checkout-modal,
+  .modal-content {
+    width: min(100%, 480px);
+    max-width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    overflow-y: auto;
+  }
+
+  .account-layout {
+    width: calc(100% - 24px);
+    min-width: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .header {
+    gap: 6px;
+    padding-inline: 10px;
+  }
+
+  .header > .announcement {
+    margin-inline: -10px;
+    font-size: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .header .header-actions .search-link {
+    display: none;
+  }
+
+  .header .cart-open {
+    padding-inline: 7px;
+  }
+
+  .hero {
+    margin-inline: 8px;
+    padding: 20px 14px;
+  }
+
+  .products-grid,
+  .product-grid,
+  #products-grid,
+  .category-grid,
+  .categories-grid,
+  .category-cards {
+    gap: 9px 7px;
+  }
+}

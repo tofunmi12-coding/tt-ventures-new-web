@@ -1,0 +1,1383 @@
+/* TTVENTURES - Black & Gold Marketplace Theme
+   CSS-only redesign. Existing HTML and JavaScript are preserved. */
+
+:root {
+    --tt-black: #111111;
+    --tt-black-soft: #1c1c1c;
+    --tt-gold: #d4a83f;
+    --tt-gold-light: #f0d58a;
+    --tt-white: #ffffff;
+    --tt-page: #f6f6f6;
+    --tt-muted: #6b6b6b;
+    --tt-border: #e7e7e7;
+    --tt-radius: 10px;
+    --tt-shadow: 0 5px 20px rgba(0,0,0,.07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    color: var(--tt-black);
+    background: var(--tt-page);
+    font-family: "DM Sans", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    transition: color .2s ease, background-color .2s ease;
+}
+
+button {
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 3px solid var(--tt-gold);
+    outline-offset: 3px;
+}
+
+/* Announcement strip */
+.announcement {
+    padding: 9px 12px;
+    background: var(--tt-black);
+    color: var(--tt-gold-light);
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+/* Header and logo */
+.header {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 4%;
+    background: var(--tt-black);
+    color: var(--tt-white);
+    border-bottom: 2px solid var(--tt-gold);
+}
+
+.header .logo,
+.logo {
+    color: var(--tt-white);
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--tt-gold);
+}
+
+.header nav,
+#main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 18px;
+}
+
+.header nav a,
+#main-nav a {
+    color: var(--tt-white);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.header nav a:hover,
+#main-nav a:hover {
+    color: var(--tt-gold-light);
+}
+
+.menu-toggle,
+.cart-open,
+.close-cart {
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid rgba(212,168,63,.55);
+    border-radius: 8px;
+    background: var(--tt-black-soft);
+    color: var(--tt-gold-light);
+}
+
+.cart-open {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-weight: 800;
+}
+
+[data-cart-count] {
+    display: inline-flex;
+    min-width: 22px;
+    min-height: 22px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 5px;
+    border-radius: 20px;
+    background: var(--tt-gold);
+    color: var(--tt-black);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* General content spacing */
+main {
+    min-width: 0;
+}
+
+.section {
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    padding: 30px 16px;
+}
+
+.section h1,
+.section h2,
+.hero h1,
+.editorial h2,
+.bottom-cta h2 {
+    line-height: 1.2;
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: clamp(21px, 4vw, 30px);
+}
+
+.section p {
+    line-height: 1.65;
+}
+
+/* Homepage hero */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    overflow: hidden;
+    margin: 14px;
+    padding: 25px 20px;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    background: var(--tt-black);
+    color: var(--tt-white);
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    max-width: 650px;
+    margin: 0 0 14px;
+    font-size: clamp(30px, 8vw, 54px);
+    font-weight: 900;
+    letter-spacing: -1.3px;
+}
+
+.hero p {
+    line-height: 1.7;
+}
+
+.hero .hero-note {
+    color: var(--tt-gold-light);
+    font-size: 13px;
+}
+
+.hero-image {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #242424;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.hero a,
+.bottom-cta a,
+button[type="submit"] {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--tt-gold);
+    color: var(--tt-black);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.hero a:hover,
+.bottom-cta a:hover {
+    background: var(--tt-gold-light);
+}
+
+/* Category cards */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.category-card {
+    display: flex;
+    min-width: 0;
+    min-height: 135px;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 14px;
+    border: 1px solid var(--tt-border);
+    border-radius: var(--tt-radius);
+    background: var(--tt-white);
+    color: var(--tt-black);
+    box-shadow: var(--tt-shadow);
+    text-decoration: none;
+}
+
+.category-card img {
+    width: 100%;
+    max-height: 125px;
+    object-fit: contain;
+}
+
+.category-card:hover {
+    border-color: var(--tt-gold);
+    color: var(--tt-black);
+    transform: translateY(-2px);
+}
+
+.category-card h3,
+.category-card strong {
+    margin-bottom: 0;
+}
+
+/* Editorial and trust sections */
+.editorial,
+.values,
+.bottom-cta {
+    margin: 16px;
+    padding: 24px 18px;
+    border-radius: 12px;
+    background: var(--tt-white);
+}
+
+.editorial {
+    border-left: 4px solid var(--tt-gold);
+}
+
+.values {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.values > *,
+.values .value-card {
+    min-width: 0;
+}
+
+.bottom-cta {
+    background: var(--tt-black);
+    color: var(--tt-white);
+}
+
+.bottom-cta h2 {
+    color: var(--tt-gold-light);
+}
+
+/* Shop heading, search and filters */
+.shop-intro {
+    padding-bottom: 12px;
+}
+
+.shop-intro h1 {
+    margin-bottom: 8px;
+    font-size: clamp(27px, 6vw, 42px);
+}
+
+.shop-section {
+    padding-top: 12px;
+}
+
+.shop-section input[type="search"],
+.shop-section select,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+.shop-section input[type="search"],
+.shop-section select {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    background: var(--tt-white);
+    color: var(--tt-black);
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.category-filters button,
+.category-filters a {
+    min-height: 40px;
+    padding: 9px 13px;
+    border: 1px solid #d8d8d8;
+    border-radius: 22px;
+    background: var(--tt-white);
+    color: var(--tt-black);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.category-filters button:hover,
+.category-filters a:hover,
+.category-filters .active {
+    border-color: var(--tt-gold);
+    background: var(--tt-black);
+    color: var(--tt-gold-light);
+}
+
+/* Product grid: mobile first */
+.products-grid,
+.product-grid,
+#products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+}
+
+.product-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--tt-border);
+    border-radius: 9px;
+    background: var(--tt-white);
+    box-shadow: 0 2px 9px rgba(0,0,0,.035);
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.product-card:hover {
+    box-shadow: var(--tt-shadow);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: contain;
+    padding: 8px;
+    background: #f2f2f2;
+}
+
+.product-card .product-info,
+.product-card .product-details {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    padding: 10px;
+}
+
+.product-card h3,
+.product-card .product-title {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0;
+    color: var(--tt-black);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.product-card .product-price,
+.product-card .price {
+    color: #9a7215;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.product-card .rating,
+.product-card .product-rating {
+    font-size: 12px;
+}
+
+.product-card button,
+.product-card .add-to-cart,
+.product-card .quick-add {
+    display: flex;
+    width: 100%;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 9px 6px;
+    border: 1px solid var(--tt-gold);
+    border-radius: 6px;
+    background: var(--tt-gold);
+    color: var(--tt-black);
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.product-card button:hover,
+.product-card .add-to-cart:hover,
+.product-card .quick-add:hover {
+    background: var(--tt-black);
+    color: var(--tt-gold-light);
+}
+
+/* Cart drawer and checkout overlays */
+.backdrop {
+    z-index: 90;
+}
+
+.cart-drawer {
+    z-index: 100;
+    width: min(420px, 92vw);
+    max-width: 100%;
+    background: var(--tt-white);
+    color: var(--tt-black);
+}
+
+.cart-head {
+    background: var(--tt-black);
+    color: var(--tt-white);
+}
+
+.cart-head h2 {
+    color: var(--tt-white);
+}
+
+.cart-head button,
+.close-cart {
+    color: var(--tt-gold-light);
+}
+
+.cart-items {
+    min-width: 0;
+}
+
+.cart-foot {
+    border-top: 1px solid var(--tt-border);
+    background: var(--tt-white);
+}
+
+#cart-subtotal {
+    color: #9a7215;
+    font-weight: 900;
+}
+
+.checkout-modal {
+    z-index: 110;
+    max-width: calc(100vw - 24px);
+    border-radius: 12px;
+    background: var(--tt-white);
+    color: var(--tt-black);
+}
+
+.checkout-modal button[type="submit"] {
+    width: 100%;
+}
+
+/* Footer */
+.site-footer,
+footer.footer,
+.footer {
+    margin-top: 28px;
+    padding: 30px 18px 18px;
+    background: var(--tt-black);
+    color: #eeeeee;
+}
+
+.site-footer a,
+footer.footer a,
+.footer a {
+    color: var(--tt-gold-light);
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+footer.footer a:hover,
+.footer a:hover {
+    color: var(--tt-white);
+}
+
+.footer-main,
+.footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+}
+
+.footer-logo {
+    color: var(--tt-gold-light);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #393939;
+    font-size: 12px;
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .header {
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .header .logo,
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero {
+        margin: 8px;
+        padding: 21px 15px;
+    }
+
+    .section {
+        padding: 24px 10px;
+    }
+
+    .products-grid,
+    .product-grid,
+    #products-grid {
+        gap: 7px;
+    }
+
+    .product-card img {
+        height: 130px;
+    }
+
+    .product-card .product-info,
+    .product-card .product-details {
+        padding: 8px;
+    }
+}
+
+/* Larger phones and tablets */
+@media (min-width: 600px) {
+    .hero {
+        grid-template-columns: 1.1fr .9fr;
+        align-items: center;
+        margin: 20px;
+        padding: 32px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .products-grid,
+    .product-grid,
+    #products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .product-card img {
+        height: 190px;
+    }
+
+    .values {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-main,
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .hero {
+        max-width: 1200px;
+        margin: 28px auto;
+        padding: 48px;
+    }
+
+    .section {
+        padding: 42px 24px;
+    }
+
+    .products-grid,
+    .product-grid,
+    #products-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+
+    .product-card .product-info,
+    .product-card .product-details {
+        padding: 14px;
+    }
+
+    .product-card h3,
+    .product-card .product-title {
+        font-size: 14px;
+    }
+
+    .product-card .product-price,
+    .product-card .price {
+        font-size: 16px;
+    }
+
+    .footer-main,
+    .footer-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}
+
+/* =========================================================
+   TTVENTURES DESIGN REFINEMENT
+   Mobile-first polish; presentation only.
+   Existing HTML, product data and JavaScript stay unchanged.
+   ========================================================= */
+
+:root {
+    --tt-gold: #d4a72c;
+    --tt-gold-light: #f3d778;
+    --tt-black: #111111;
+    --tt-white: #ffffff;
+    --tt-card-radius: 12px;
+}
+
+/* Prevent padding from unexpectedly widening elements. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-wrap: break-word;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Sharper, more consistent section headings. */
+.section h2,
+section h2 {
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+}
+
+.section p,
+section p {
+    line-height: 1.6;
+}
+
+/* Product grids: retain two columns on small screens. */
+.products-grid,
+.product-grid,
+#products-grid {
+    align-items: stretch;
+    min-width: 0;
+}
+
+.product-card {
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(212, 167, 44, 0.18);
+    border-radius: var(--tt-card-radius);
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.045);
+    transition:
+        box-shadow 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #f7f7f7;
+}
+
+.product-card .product-info,
+.product-card .product-details {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-card h3,
+.product-card .product-title {
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.product-card .product-price,
+.product-card .price {
+    color: #8a6500;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.35;
+}
+
+/* Clear, easy-to-tap purchase controls. */
+.product-card button,
+.product-card .add-to-cart,
+button.add-to-cart,
+a.button,
+.button {
+    min-height: 42px;
+    touch-action: manipulation;
+}
+
+.product-card .add-to-cart,
+button.add-to-cart {
+    border: 1px solid #c79a20;
+    border-radius: 8px;
+    background: #d4a72c;
+    color: #111111;
+    font-weight: 750;
+    transition: background-color 160ms ease;
+}
+
+.product-card .add-to-cart:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #e5bb48;
+    outline-offset: 3px;
+}
+
+/* Search controls remain comfortable on touch screens. */
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+input[type="search"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+    min-height: 42px;
+}
+
+/* Keep hero text readable at narrow phone widths. */
+.hero h1 {
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+}
+
+.hero p {
+    max-width: 58ch;
+}
+
+/* Prevent long links and footer text from overflowing. */
+.site-footer,
+footer.footer,
+.footer {
+    overflow-wrap: anywhere;
+}
+
+.site-footer a,
+footer.footer a,
+.footer a {
+    text-underline-offset: 3px;
+}
+
+/* Respect touch devices; hover effects are for pointer devices. */
+@media (hover: hover) and (pointer: fine) {
+    .product-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(212, 167, 44, 0.65);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+    }
+
+    .product-card .add-to-cart:hover,
+    button.add-to-cart:hover {
+        background: #e5bb48;
+    }
+}
+
+/* Extra care for compact phones. */
+@media (max-width: 380px) {
+    .products-grid,
+    .product-grid,
+    #products-grid {
+        column-gap: 8px;
+        row-gap: 10px;
+    }
+
+    .product-card {
+        border-radius: 9px;
+    }
+
+    .product-card img {
+        max-height: 155px;
+    }
+
+    .product-card .product-info,
+    .product-card .product-details {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .product-card .add-to-cart,
+    button.add-to-cart {
+        padding: 9px 6px;
+        font-size: 12px;
+    }
+}
+
+/* Wider mobile screens. */
+@media (min-width: 381px) and (max-width: 599px) {
+    .product-card img {
+        max-height: 185px;
+    }
+}
+
+/* Avoid hover movement and animation when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .product-card,
+    .product-card .add-to-cart,
+    button.add-to-cart {
+        transition: none;
+    }
+}
+
+/* End TTVENTURES design refinement. */
+
+/* =========================================================
+   TTVENTURES MARKETPLACE REFINEMENT
+   Mobile-first visual layer.
+   Does not change product, cart, search, or payment logic.
+   ========================================================= */
+
+:root {
+    --tt-black: #111111;
+    --tt-black-soft: #202020;
+    --tt-gold: #d6ad48;
+    --tt-gold-light: #f5dfa0;
+    --tt-white: #ffffff;
+    --tt-page: #f4f4f4;
+    --tt-muted: #666666;
+    --tt-border: #e6e6e6;
+    --tt-radius: 12px;
+    --tt-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Consistent sizing and prevent sideways scrolling. */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background: var(--tt-page);
+    color: var(--tt-black);
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Compact marketplace announcement bar. */
+.announcement {
+    padding: 8px 10px;
+    background: var(--tt-black);
+    color: var(--tt-gold-light);
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    text-align: center;
+}
+
+/* Premium dark header. */
+.header {
+    background: var(--tt-black);
+    color: var(--tt-white);
+    border-bottom: 2px solid var(--tt-gold);
+    gap: 10px;
+    padding: 13px 4%;
+}
+
+.header .logo,
+.logo {
+    color: var(--tt-white);
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--tt-gold);
+}
+
+.header nav a,
+#main-nav a {
+    border-radius: 7px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header nav a:hover,
+#main-nav a:hover,
+.header nav a.active,
+#main-nav a.active {
+    color: var(--tt-gold-light);
+}
+
+/* Large, accessible touch targets. */
+.menu-toggle,
+.cart-open,
+.close-cart {
+    min-height: 42px;
+    border-radius: 9px;
+}
+
+.cart-open {
+    border: 1px solid rgba(214, 173, 72, 0.55);
+}
+
+/* Consistent page gutters on small screens. */
+main {
+    width: 100%;
+    min-width: 0;
+}
+
+.section {
+    padding: 30px 16px;
+}
+
+.section h1,
+.section h2,
+.hero h1,
+.editorial h2,
+.bottom-cta h2 {
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+}
+
+.section h2 {
+    margin-bottom: 12px;
+}
+
+/* More polished hero panel. */
+.hero {
+    margin: 14px 12px 22px;
+    overflow: hidden;
+    border: 1px solid rgba(214, 173, 72, 0.3);
+    border-radius: 16px;
+    box-shadow: var(--tt-shadow);
+}
+
+.hero-copy {
+    padding: 24px 18px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 7vw, 52px);
+    font-weight: 800;
+}
+
+.hero p {
+    line-height: 1.7;
+}
+
+.hero a,
+.bottom-cta a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+/* Category cards stay tidy and tappable. */
+.category-grid {
+    gap: 12px;
+}
+
+.category-card {
+    overflow: hidden;
+    border: 1px solid var(--tt-border);
+    border-radius: 12px;
+    background: var(--tt-white);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.category-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.category-card h3,
+.category-card strong {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* Clean white product cards, two columns on mobile. */
+.products-grid,
+.product-grid,
+#products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--tt-white);
+    border: 1px solid #e9e9e9;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 7px;
+}
+
+.product-card .product-info,
+.product-card .product-details {
+    padding: 10px;
+}
+
+.product-card h3,
+.product-card .product-title {
+    font-size: 13px;
+    line-height: 1.45;
+    font-weight: 700;
+}
+
+.product-card .product-price,
+.product-card .price {
+    color: #9b741a;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.product-card .rating,
+.product-card .product-rating {
+    font-size: 12px;
+}
+
+/* Strong gold purchase buttons. */
+.product-card button,
+.product-card .add-to-cart,
+.product-card .quick-add,
+.add-to-cart {
+    min-height: 42px;
+    border: 1px solid var(--tt-gold);
+    border-radius: 7px;
+    background: var(--tt-gold);
+    color: #17130a;
+    font-size: 12px;
+    font-weight: 800;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-card button:hover,
+.product-card .add-to-cart:hover,
+.product-card .quick-add:hover,
+.add-to-cart:hover {
+    background: #edcb70;
+    color: #111111;
+}
+
+/* Search and category filters. */
+.shop-section input[type="search"],
+.shop-section select,
+.shop-search input,
+#product-search {
+    min-height: 44px;
+    border: 1px solid #dcdcdc;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 14px;
+}
+
+.category-filters button,
+.category-filters a {
+    min-height: 38px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.category-filters button:hover,
+.category-filters a:hover,
+.category-filters .active {
+    background: var(--tt-black);
+    border-color: var(--tt-gold);
+    color: var(--tt-gold-light);
+}
+
+/* Trust sections and editorial panels. */
+.editorial,
+.values,
+.bottom-cta {
+    border-radius: 14px;
+}
+
+.trust-card,
+.trust-badge,
+.trust-strip-item {
+    border-radius: 10px;
+}
+
+/* Cart drawer remains controlled by the existing JavaScript. */
+.cart-drawer {
+    background: #ffffff;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.16);
+}
+
+.cart-head,
+.cart-header,
+.cart-drawer-header {
+    background: var(--tt-black);
+    color: var(--tt-white);
+    border-bottom: 2px solid var(--tt-gold);
+}
+
+.cart-head h2 {
+    color: var(--tt-white);
+}
+
+.cart-foot {
+    border-top: 1px solid var(--tt-border);
+    background: #ffffff;
+}
+
+/* Keep checkout controls easy to use on touch screens. */
+#checkout-form input,
+#checkout-form select,
+#checkout-form textarea {
+    min-height: 44px;
+    max-width: 100%;
+}
+
+#checkout-form button,
+.checkout-submit,
+#checkout-form button[type="submit"] {
+    min-height: 46px;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+/* Tablet layouts. */
+@media (min-width: 600px) {
+    .section {
+        padding: 40px 24px;
+    }
+
+    .hero {
+        margin: 22px 24px 30px;
+        border-radius: 20px;
+    }
+
+    .hero-copy {
+        padding: 32px;
+    }
+
+    .products-grid,
+    .product-grid,
+    #products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .product-card img {
+        height: 190px;
+    }
+}
+
+/* Desktop marketplace layouts. */
+@media (min-width: 900px) {
+    .section {
+        padding: 48px 4%;
+    }
+
+    .hero {
+        margin: 28px auto 36px;
+        max-width: 1400px;
+    }
+
+    .products-grid,
+    .product-grid,
+    #products-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+
+    .product-card .product-info,
+    .product-card .product-details {
+        padding: 14px;
+    }
+
+    .product-card h3,
+    .product-card .product-title {
+        font-size: 14px;
+    }
+}
+
+/* Small phone screens. */
+@media (max-width: 380px) {
+    .header {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .header .logo,
+    .logo {
+        font-size: 17px;
+    }
+
+    .products-grid,
+    .product-grid,
+    #products-grid {
+        gap: 7px;
+    }
+
+    .product-card img {
+        height: 125px;
+    }
+
+    .product-card .product-info,
+    .product-card .product-details {
+        padding: 7px;
+    }
+
+    .product-card h3,
+    .product-card .product-title {
+        font-size: 12px;
+    }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* End TTVENTURES marketplace refinement. */

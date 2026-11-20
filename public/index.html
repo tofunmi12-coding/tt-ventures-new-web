@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover men's fashion, sneakers, bags, accessories and designer sleepers at TT Ventures.">
+
+    <title>TT Ventures | Style That Moves With You</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Website stylesheet and JavaScript -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium-theme.css">
+    <script src="auth-guard.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+
+<body>
+
+
+
+    <!-- Main navigation -->
+    <header class="header">
+
+        <a class="logo" href="index.html">
+            TT<span>VENTURES</span>
+
+        </a>
+
+        <!-- Announcement bar -->
+        <div class="announcement">
+            YOUR STYLE, YOUR STATEMENT
+            <span>&bull;</span>
+            DISCOVER THE LATEST COLLECTION
+        </div>
+
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+            &#9776;
+        </button>
+
+        <nav id="main-nav" aria-label="Main navigation">
+            <a class="active" href="index.html">Home</a>
+            <a href="shop.html">Shop All</a>
+            <a href="shop.html?category=Men%27s%20Clothing">Clothing</a>
+            <a href="shop.html?category=Shoes%20%26%20Sneakers">Shoes</a>
+            <a href="shop.html?category=Bags%20%26%20Accessories">Accessories</a>
+            <a href="shop.html?category=Designer%20Sleepers">Sleepers</a>
+            <a href="account.html">My Account</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="search-link" href="shop.html" aria-label="Shop products">&#128269;</a>
+
+            <button class="cart-open" data-open-cart aria-label="Open shopping cart">
+                Cart  <span data-cart-count>0</span>
+            </button>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- Hero banner -->
+        <section class="hero">
+
+            <div class="hero-copy">
+                <p class="eyebrow">THE TT VENTURES EDIT</p>
+
+                <h1>
+                    Dress your way.<br>
+                    <em>Stand out daily.</em>
+                </h1>
+
+                <p class="intro">
+                    Discover men's clothing, fresh sneakers, everyday
+                    accessories and designer sleepers made for your own
+                    kind of style.
+                </p>
+
+                <a class="button dark" href="shop.html#collection">
+                    Shop the collection <span>&rarr;</span>
+                </a>
+
+                <p class="hero-note">
+                    â€ â‚¬â€ STYLE THAT MOVES WITH YOU
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+                    alt="Modern clothing and streetwear collection">
+
+                <div class="image-label">
+                    EVERYDAY STYLE / YOUR WAY
+                </div>
+
+                <div class="round-stamp">
+                    TT<br>
+                    <small>STYLE EVERY DAY</small>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Shop by category -->
+        <section class="section categories">
+
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">FIND YOUR NEXT FAVOURITE</p>
+                    <h2>Shop by category</h2>
+                </div>
+
+                <a class="under-link" href="shop.html">
+                    Explore everything &rarr;
+                </a>
+            </div>
+
+            <div class="category-grid">
+
+                <a class="category-card tall" href="shop.html?category=Men%27s%20Clothing">
+
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                        alt="Men's clothing and fashion" loading="lazy">
+
+                    <span>
+                        <small>01 / THE EVERYDAY EDIT</small>
+                        <strong>Men's clothing</strong>
+                        <b>Shop clothing &rarr;</b>
+                    </span>
+                </a>
+
+                <a class="category-card" href="shop.html?category=Shoes%20%26%20Sneakers">
+
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                        alt="Statement sneakers" loading="lazy">
+
+                    <span>
+                        <small>02 / STEP OUT</small>
+                        <strong>Shoes &amp; sneakers</strong>
+                        <b>Find your pair &rarr;</b>
+                    </span>
+                </a>
+
+                <a class="category-card" href="shop.html?category=Bags%20%26%20Accessories">
+
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                        alt="Bags and accessories" loading="lazy">
+
+                    <span>
+                        <small>03 / THE FINISHING TOUCH</small>
+                        <strong>Bags &amp; accessories</strong>
+                        <b>Complete the look &rarr;</b>
+                    </span>
+                </a>
+
+                <a class="category-card wide" href="shop.html?category=Designer%20Sleepers">
+
+                    <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                        alt="Comfortable slip-on footwear" loading="lazy">
+
+                    <span>
+                        <small>04 / OFF-DUTY COMFORT</small>
+                        <strong>Designer sleepers</strong>
+                        <b>Shop sleepers &rarr;</b>
+                    </span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Fashion editorial banner -->
+        <section class="editorial">
+
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&amp;fit=crop&amp;w=1300&amp;q=85"
+                alt="Contemporary street style fashion" loading="lazy">
+
+            <div>
+                <p class="eyebrow">THE WAY YOU WEAR IT</p>
+
+                <h2>
+                    Good style is<br>
+                    <em>in the details.</em>
+                </h2>
+
+                <p>
+                    From the right fit to the final accessory, discover
+                    pieces that make getting dressed feel effortless.
+                </p>
+
+                <a class="button light" href="shop.html#collection">
+                    Find your look &rarr;
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Brand values -->
+        <section class="section values">
+
+            <div>
+                <b>01</b>
+                <h3>Curated style</h3>
+                <p>Everyday pieces with a considered look.</p>
+            </div>
+
+            <div>
+                <b>02</b>
+                <h3>Made for your routine</h3>
+                <p>From laid-back days to going-out plans.</p>
+            </div>
+
+            <div>
+                <b>03</b>
+                <h3>Your look, your way</h3>
+                <p>Build a wardrobe that feels like you.</p>
+            </div>
+
+        </section>
+
+        <!-- Final shopping call to action -->
+        <section class="bottom-cta">
+            <p class="eyebrow">READY WHEN YOU ARE</p>
+            <h2>Your next favourite is waiting.</h2>
+
+            <a class="button dark" href="shop.html#collection">
+                Shop TT Ventures &rarr;
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">TTVENTURES</a>
+                <p class="footer-tagline">
+                    Everyday style. Your own statement.
+                </p>
+                <p>
+                    Discover clothing, footwear, and everyday essentials
+                    that express your style.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="shop.html">Shop all</a>
+                <a href="shop.html?category=Men%27s%20Clothing">Men's clothing</a>
+                <a href="shop.html?category=Shoes%20%26%20Sneakers">
+                    Shoes &amp; sneakers
+                </a>
+                <a href="shop.html?category=Designer%20Sleepers">
+                    Designer sleepers
+                </a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Customer care</h3>
+                <a href="contact.html">Contact us</a>
+                <a href="delivery.html">Delivery information</a>
+                <a href="returns.html">Returns &amp; exchanges</a>
+            </div>
+
+            <div class="footer-newsletter">
+                <h3>Stay in the loop</h3>
+                <p>
+                    Get updates on new arrivals, exclusive offers,
+                    and the latest styles.
+                </p>
+
+                <form id="newsletter-form">
+                    <label class="sr-only" for="newsletter-email">
+                        Email address
+                    </label>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address" required />
+                    <button type="submit">Subscribe</button>
+                </form>
+
+                <p id="newsletter-message" aria-live="polite"></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> TTVENTURES. All rights reserved.</p>
+            <p>Style &middot; Quality &middot; Confidence</p>
+        </div>
+    </footer>
+
+    <!-- Shopping cart backdrop -->
+    <div class="backdrop" data-close-cart></div>
+
+    <!-- Shopping cart drawer -->
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+
+        <div class="cart-head">
+
+            <div>
+                <p class="eyebrow">YOUR SELECTION</p>
+                <h2>Your bag <small data-cart-count>(0)</small></h2>
+            </div>
+
+            <button class="close-cart" data-close-cart aria-label="Close cart">
+                &times;
+            </button>
+
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="cart-foot">
+
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">&#8358;0</strong>
+            </div>
+
+            <p>Delivery fees are calculated separately.</p>
+
+            <button id="checkout-button" class="button dark full">
+                Proceed to checkout &rarr;
+            </button>
+
+            <small>
+                <span>Thoughtful style. Every day.</span>
+            </small>
+
+        </div>
+    </aside>
+
+    <!-- Checkout form: include only once on this page -->
+    <div class="checkout-overlay" id="checkout-overlay" aria-hidden="true">
+
+        <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+
+            <button type="button" class="checkout-close" id="checkout-close" aria-label="Close checkout">
+                &times;
+            </button>
+
+            <p class="eyebrow">ALMOST YOURS</p>
+
+            <h2 id="checkout-title">Complete your order</h2>
+
+            <p>Enter your details so we can arrange delivery.</p>
+
+            <form id="checkout-form">
+
+                <label for="checkout-name">Full name</label>
+                <input id="checkout-name" name="name" type="text" autocomplete="name" required>
+
+                <label for="checkout-email">Email address</label>
+                <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+
+                <label for="checkout-phone">Phone number</label>
+                <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" required>
+
+                <label for="checkout-address">Delivery address</label>
+                <textarea id="checkout-address" name="address" autocomplete="street-address" rows="3"
+                    required></textarea>
+
+
+                <!-- Standard online payment -->
+                <fieldset class="payment-methods">
+                    <legend>Payment method</legend>
+                    <p class="payment-intro">
+                        Pay securely online by card, bank transfer, or USSD.
+                    </p>
+                    <label class="payment-card">
+                        <input type="radio" name="paymentMethod" value="paystack" required checked>
+                        <span class="payment-icon">&#8358;</span>
+                        <span class="payment-copy">
+                            <strong>Standard online payment</strong>
+                            <small>Choose your available payment option on the secure checkout page</small>
+                        </span>
+                        <span class="payment-check"></span>
+                    </label>
+                </fieldset>
+
+                <!-- Order total is updated by script.js -->
+                    <div class="checkout-total">
+                        <span>Order total</span>
+                        <strong id="checkout-total">&#8358;0</strong>
+                    </div>
+
+                    <button type="submit" id="place-order-button" class="button dark full">
+                        Place Order
+                    </button>
+
+            </form>
+        </section>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="auth-modal.js" defer></script>
+</body>
+
+</html>
+
